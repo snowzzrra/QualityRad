@@ -11,7 +11,7 @@ namespace QualityRad.Pages
 {
 
 
-    public partial class CadastroClinica
+    public partial class WebForm1
     {
 
         /// <summary>

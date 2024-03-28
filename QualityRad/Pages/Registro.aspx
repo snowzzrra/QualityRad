@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroClinica.aspx.cs" Inherits="QualityRad.Pages.CadastroClinica" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="QualityRad.Pages.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -94,3 +94,4 @@
     </form>
 </body>
 </html>
+

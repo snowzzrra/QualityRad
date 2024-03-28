@@ -49,24 +49,80 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">QualityRad</a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Pages/CadastroClinica">Cadastro de Clinica</a></li>
-                        <li><a runat="server" href="~/Pages/Equipamento">Equipamento</a></li>
-                        <li><a runat="server" href="~/Pages/Terceirizados">Serviços Terceirizados</a></li>
-                        <li><a runat="server" href="~/Pages/DocumentosExternos">Documentos Externos</a></li>
-                        <li><a runat="server" href="~/Pages/Agenda">Minha Agenda</a></li>
-                        <li><a runat="server" href="~/Pages/PQR">Programa de Qualidade Radiológica</a></li>
-                        <li><a runat="server" href="~/Pages/PPR">Programa de Proteção Radiológica</a></li>
-                        <li><a runat="server" href="~/Pages/PGR">Programa de Gerenciamento de Risco</a></li>
-                        <li><a runat="server" href="~/Pages/POP">POPs Rotinas Operacionais</a></li>
-                        <li><a runat="server" href="~/Pages/NSP">Núcleo de Segurança do Paciente</a></li>
-                        <li><a runat="server" href="~/Pages/PGRSS">PGRSS</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
+        <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+        .navbar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 20px;
+        color: white;
+    }
+    .navbar h1 {
+        margin: 0;
+    }
+    .sidebar {
+        height: 100%;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        padding-top: 70px;
+    }
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .sidebar ul li {
+        padding: 10px;
+        text-align: center;
+    }
+    .sidebar ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    .content {
+        margin-left: 250px;
+        padding: 20px;
+    }
+    .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+<div class="sidebar">
+    <h2 style="color: white; text-align: center; padding-bottom: 20px;">QualityRad</h2>
+    <ul>
+        <li><a runat="server" href="~/">Home</a></li>
+        <li><a runat="server" href="~/">Register</a></li>
+        <li><a runat="server" href="~/Pages/CadastroClinica">Cadastro de Clinica</a></li>
+        <li><a runat="server" href="~/Pages/Equipamento">Equipamento</a></li>
+        <li><a runat="server" href="~/Pages/Terceirizados">Serviços Terceirizados</a></li>
+        <li><a runat="server" href="~/Pages/DocumentosExternos">Documentos Externos</a></li>
+        <li><a runat="server" href="~/Pages/Agenda">Minha Agenda</a></li>
+        <li><a runat="server" href="~/Pages/PQR">Programa de Qualidade Radiológica</a></li>
+        <li><a runat="server" href="~/Pages/PPR">Programa de Proteção Radiológica</a></li>
+        <li><a runat="server" href="~/Pages/PGR">Programa de Gerenciamento de Risco</a></li>
+        <li><a runat="server" href="~/Pages/POP">POPs Rotinas Operacionais</a></li>
+        <li><a runat="server" href="~/Pages/NSP">Núcleo de Segurança do Paciente</a></li>
+        <li><a runat="server" href="~/Pages/PGRSS">PGRSS</a></li>
+    </ul>
+</div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

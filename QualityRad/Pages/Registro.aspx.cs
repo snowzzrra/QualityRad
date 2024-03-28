@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace QualityRad.Pages
 {
-    public partial class CadastroClinica : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,11 +23,11 @@ namespace QualityRad.Pages
 
             if (password == confirmPassword)
             {
-                Response.Redirect("~/SuccessPage.aspx"); 
+                Response.Redirect("~/SuccessPage.aspx");
             }
             else
             {
-                
+
             }
         }
     }
