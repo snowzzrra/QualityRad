@@ -11,24 +11,7 @@ namespace QualityRad.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }
 
-        protected void RegisterButton_Click(object sender, EventArgs e)
-        {
-            string name = nameTextBox.Text;
-            string email = emailTextBox.Text;
-            string password = passwordTextBox.Text;
-            string confirmPassword = passwordConfirmTextBox.Text;
-            string phone = phoneTextBox.Text;
-
-            if (password == confirmPassword)
-            {
-                Response.Redirect("~/SuccessPage.aspx"); 
-            }
-            else
-            {
-                
-            }
         }
     }
 }
