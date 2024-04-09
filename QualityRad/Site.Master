@@ -4,7 +4,7 @@
 
 <html lang="pt">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - QualityRad</title>
@@ -15,6 +15,73 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+        /* Estilos para a barra lateral */
+        .sidebar {
+            width: 250px;
+            float: left;
+            background-color: #f2f2f2;
+            padding: 15px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            border-radius: 10px; /* Adiciona bordas arredondadas */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease; /* Adiciona transição suave de cor de fundo */
+        }
+
+        /* Estilos para os links ativos na barra lateral */
+        .sidebar a.active {
+            color: #fff;
+            background-color: #337ab7;
+        }
+
+        .sidebar a:hover {
+            background-color: #e0e0e0; /* Altera a cor de fundo no hover */
+        }
+
+        /* Estilos para o conteúdo principal */
+        .main-content {
+            margin: 0 auto; /* Centralizar o conteúdo */
+            padding: 15px; /* Adicionar padding opcional */
+        }
+
+        /* Estilos para os links na barra lateral */
+        .sidebar a {
+            display: block;
+            padding: 5px 0;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Estilos para os links ativos na barra lateral */
+        .sidebar a.active {
+            color: #fff;
+            background-color: #337ab7;
+        }
+
+        hr {
+            width: 85%;
+        }
+
+        .footer {
+            margin-left: 100px;
+        }
+
+        .fim-pagina {
+            margin-top: 180px;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -39,41 +106,32 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">QualityRad</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Pages/CadastroClinica">Cadastro de Clinica</a></li>
-                        <li><a runat="server" href="~/Pages/Equipamento">Equipamento</a></li>
-                        <li><a runat="server" href="~/Pages/Terceirizados">Serviços Terceirizados</a></li>
-                        <li><a runat="server" href="~/Pages/DocumentosExternos">Documentos Externos</a></li>
-                        <li><a runat="server" href="~/Pages/Agenda">Minha Agenda</a></li>
-                        <li><a runat="server" href="~/Pages/PQR">Programa de Qualidade Radiológica</a></li>
-                        <li><a runat="server" href="~/Pages/PPR">Programa de Proteção Radiológica</a></li>
-                        <li><a runat="server" href="~/Pages/PGR">Programa de Gerenciamento de Risco</a></li>
-                        <li><a runat="server" href="~/Pages/POP">POPs Rotinas Operacionais</a></li>
-                        <li><a runat="server" href="~/Pages/NSP">Núcleo de Segurança do Paciente</a></li>
-                        <li><a runat="server" href="~/Pages/PGRSS">PGRSS</a></li>
-                    </ul>
+        <div class="container body-content">
+            <div class="sidebar">
+                <a href="~/">Home</a>
+                <a href="~/Pages/CadastroClinica">Cadastro de Clinica</a>
+                <a href="~/Pages/Equipamento">Equipamento</a>
+                <a href="~/Pages/Terceirizados">Serviços Terceirizados</a>
+                <a href="~/Pages/DocumentosExternos">Documentos Externos</a>
+                <a href="~/Pages/Agenda">Minha Agenda</a>
+                <a href="~/Pages/PQR">Programa de Qualidade Radiológica</a>
+                <a href="~/Pages/PPR">Programa de Proteção Radiológica</a>
+                <a href="~/Pages/PGR">Programa de Gerenciamento de Risco</a>
+                <a href="~/Pages/POP">POPs Rotinas Operacionais</a>
+                <a href="~/Pages/NSP">Núcleo de Segurança do Paciente</a>
+                <a href="~/Pages/PGRSS">PGRSS</a>
+            </div>
+
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <div class="fim-pagina">
+                <hr />
+                <footer class="footer">
+                    <p>&copy; <%: DateTime.Now.Year %> - QualityRad</p>
+                </footer>
                 </div>
             </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - QualityRad</p>
-            </footer>
         </div>
 
     </form>
