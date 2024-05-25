@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroClinica.aspx.cs" Inherits="QualityRad.Pages.CadastroClinica" MasterPageFile="~/Site.Master" Title ="CadastroClinica" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroClinica.aspx.cs" Inherits="QualityRad.Pages.CadastroClinica" MasterPageFile="~/Site.Master" Title ="CadastroClinica" %>
 
 <asp:Content runat="server" ID="Content1" ContentPlaceHolderID="MainContent">
     <style>

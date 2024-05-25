@@ -127,6 +127,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Login\LoginPage.aspx" />
     <Content Include="Pages\CadastroClinica.aspx" />
+    <Content Include="Pages\PQR-TesteAceita.aspx" />
     <Content Include="Pages\Registro.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="Pages\CadastroClinica.aspx.designer.cs">
       <DependentUpon>CadastroClinica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PQR-TesteAceita.aspx.cs">
+      <DependentUpon>PQR-TesteAceita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PQR-TesteAceita.aspx.designer.cs">
+      <DependentUpon>PQR-TesteAceita.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
