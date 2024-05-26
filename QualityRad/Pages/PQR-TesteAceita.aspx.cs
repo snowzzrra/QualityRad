@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QualityRad.Login.Models;
+using System;
 using System.Web.UI;
 
 namespace QualityRad.Pages
@@ -9,7 +10,7 @@ namespace QualityRad.Pages
         {
             if (!IsPostBack)
             {
-                
+
             }
         }
 
@@ -38,3 +39,4 @@ namespace QualityRad.Pages
         }
     }
 }
+
