@@ -77,18 +77,26 @@
         }
 
         .footer {
-            margin-left: 100px;
+            text-align: center;
         }
 
         .fim-pagina {
-            margin-top: 180px;
+            right: 0;
+            left: 18rem;
+            bottom: 10px;
+            position: absolute;
+        }
+
+        .logout-button{
+            position: absolute;
+            bottom: 15px;
         }
 
     </style>
 
 </head>
 <body>
-    <form runat="server">
+    <form runat="server" style="height: 100%;">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -109,7 +117,7 @@
             </Scripts>
         </asp:ScriptManager>
      
-        <div class="container body-content">
+        <div class="container body-content" style="height: 100%;">
             <div class="sidebar" id="Sidebar" visible="false" runat="server">
                 <a runat="server" href="~/Default.aspx">Home</a>
                 <a runat="server" href="~/Pages/CadastroClinica.aspx">Cadastro de Clinica</a>
@@ -123,17 +131,17 @@
                 <a runat="server" href="~/Pages/POP">POPs Rotinas Operacionais</a>
                 <a runat="server" href="~/Pages/NSP">Núcleo de Segurança do Paciente</a>
                 <a runat="server" href="~/Pages/PGRSS">PGRSS</a>
-                <asp:LinkButton runat="server" OnClick="LogOff_Click" Font-Underline="true">Sair da conta.</asp:LinkButton>
+                <asp:LinkButton runat="server" OnClick="LogOff_Click" CssClass="logout-button" Font-Underline="true">Sair da conta.</asp:LinkButton>
             </div>
 
-            <div class="main-content">
+            <div class="main-content" style="padding: 0; height: 100%;">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
-                <div class="fim-pagina">
-                <hr />
-                <footer class="footer">
-                    <p>&copy; <%: DateTime.Now.Year %> - QualityRad</p>
-                </footer>
+                <div class="fim-pagina" runat="server" visible="false" id="Footer">
+                    <hr />
+                    <footer class="footer">
+                        <p>&copy; <%: DateTime.Now.Year %> - QualityRad</p>
+                    </footer>
                 </div>
             </div>
         </div>

@@ -14,6 +14,7 @@ namespace QualityRad
             if (Application["LoginSession"] != null)
             {
                 this.Sidebar.Visible = true;
+                this.Footer.Visible = true;
             }
             else if (Context.Request.Path != "/Login/LoginPage" && Context.Request.Path != "/Login/Registro")
             {
