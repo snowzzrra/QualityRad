@@ -31,7 +31,7 @@ namespace QualityRad.Login.Models
                     {
                         while (loReader.Read())
                         {
-                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2));
+                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2), loReader.GetString(3), loReader.GetString(4));
                             loListContas.Add(loNovaConta);
                         }
                         loReader.Close();
@@ -47,10 +47,34 @@ namespace QualityRad.Login.Models
             return loListContas;
         }
 
-        public bool ContaValida(Account conta)
+        public int CriarConta(Account ioNovaConta)
+        {
+            if (ioNovaConta == null)
+                throw new NullReferenceException();
+            int liQtdRegistrosInseridos = 0;
+            using (ioConexao = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+            {
+                try
+                {
+                    ioConexao.Open();
+                    ioQuery = new SqlCommand("INSERT INTO ACCOUNTS (email_user, pass_user, phone_user, name_user) VALUES (@email, @senha, @telefone, @nome)", ioConexao);
+                    ioQuery.Parameters.Add(new SqlParameter("@email", ioNovaConta.acc_email));
+                    ioQuery.Parameters.Add(new SqlParameter("@senha", ioNovaConta.acc_senha));
+                    ioQuery.Parameters.Add(new SqlParameter("@telefone", ioNovaConta.acc_fone));
+                    ioQuery.Parameters.Add(new SqlParameter("@nome", ioNovaConta.acc_nome));
+                    liQtdRegistrosInseridos = ioQuery.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Erro ao tentar cadastrar novo usuário: " + ex);
+                }
+            }
+            return liQtdRegistrosInseridos;
+        }
+
+        public Account ContaValida(string email, string senha)
         {
             List<Account> loListContas = new List<Account>();
-            bool contaValida = false;
 
             // Capturando a connection string do arquivo de configuração
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -61,15 +85,15 @@ namespace QualityRad.Login.Models
                 {
                     // Tentativa de abrir a conexão
                     ioConexao.Open();
-                    ioQuery = new SqlCommand("SELECT * FROM ACCOUNTS WHERE ACC_EMAIL = @email COLLATE Latin1_General_CS_AS AND ACC_SENHA = @senha COLLATE Latin1_General_CS_AS", ioConexao);
-                    ioQuery.Parameters.Add(new SqlParameter("@email", conta.acc_email));
-                    ioQuery.Parameters.Add(new SqlParameter("@senha", conta.acc_senha));
+                    ioQuery = new SqlCommand("SELECT * FROM ACCOUNTS WHERE EMAIL_USER = @email COLLATE Latin1_General_CS_AS AND PASS_USER = @senha COLLATE Latin1_General_CS_AS", ioConexao);
+                    ioQuery.Parameters.Add(new SqlParameter("@email", email));
+                    ioQuery.Parameters.Add(new SqlParameter("@senha", senha));
 
                     using (SqlDataReader loReader = ioQuery.ExecuteReader())
                     {
                         while (loReader.Read())
                         {
-                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2));
+                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2), loReader.GetString(3), loReader.GetString(4));
                             loListContas.Add(loNovaConta);
                         }
                         loReader.Close();
@@ -84,10 +108,10 @@ namespace QualityRad.Login.Models
 
             if (loListContas.Any())
             {
-                contaValida = true;
+                return loListContas.FirstOrDefault();
             }
 
-            return contaValida;
+            return null;
         }
     }
 }

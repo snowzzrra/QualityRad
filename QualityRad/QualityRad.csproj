@@ -128,7 +128,7 @@
     <Content Include="Login\LoginPage.aspx" />
     <Content Include="Pages\CadastroClinica.aspx" />
     <Content Include="Pages\PQR-TesteAceita.aspx" />
-    <Content Include="Pages\Registro.aspx" />
+    <Content Include="Login\Registro.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -213,11 +213,11 @@
     <Compile Include="Pages\PQR-TesteAceita.aspx.designer.cs">
       <DependentUpon>PQR-TesteAceita.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Registro.aspx.cs">
+    <Compile Include="Login\Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Registro.aspx.designer.cs">
+    <Compile Include="Login\Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

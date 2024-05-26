@@ -87,6 +87,7 @@ html, body {
                <asp:Button runat="server" ID="btnLogin" CssClass="btn btn-success" Text="ENVIAR" OnClick="btnLogin_Click" />
                 <hr style="margin-top:20px; width:100%; border:1px solid #d6d6d6;" />
                 <a href="#" class="esqueceuasenha">Esqueceu a senha?</a>
+                <a href="Registro.aspx" class="esqueceuasenha">Não tenho uma conta.</a>
             </div>
             </div>
         </div>

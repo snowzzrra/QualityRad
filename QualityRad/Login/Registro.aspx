@@ -79,14 +79,14 @@ html, body {
     <form id="form1" runat="server">
         <div class="container">
             <div class="register">
-                <asp:TextBox runat="server" ID="nameTextBox" CssClass="form-item" placeholder="Razão social" />
-                <asp:TextBox runat="server" ID="emailTextBox" CssClass="form-item" placeholder="Email" />
-                <asp:TextBox runat="server" ID="passwordTextBox" CssClass="form-item" TextMode="Password" placeholder="Senha" />
-                <asp:TextBox runat="server" ID="passwordConfirmTextBox" CssClass="form-item" TextMode="Password" placeholder="Confirmar senha" />
-                <asp:TextBox runat="server" ID="phoneTextBox" CssClass="form-item" placeholder="Telefone" />
+                <asp:TextBox runat="server" ID="tbxName" CssClass="form-item" placeholder="Razão social" />
+                <asp:TextBox runat="server" ID="tbxEmail" CssClass="form-item" placeholder="Email" />
+                <asp:TextBox runat="server" ID="tbxPassword" CssClass="form-item" TextMode="Password" placeholder="Senha" />
+                <asp:TextBox runat="server" ID="tbxPasswordConfirm" CssClass="form-item" TextMode="Password" placeholder="Confirmar senha" />
+                <asp:TextBox runat="server" ID="tbxPhone" CssClass="form-item" placeholder="Telefone" />
                 <asp:Button runat="server" ID="registerButton" CssClass="form-button" Text="REGISTRAR-SE" OnClick="RegisterButton_Click" />
                 <hr style="margin-top:20px; width:100%; border:1px solid #d6d6d6;" />
-                <a href="#" class="alreadyaccount">Já tem uma conta?</a>
+                <a href="LoginPage.aspx" class="alreadyaccount">Já tem uma conta?</a>
             </div>
         </div>
     </form>

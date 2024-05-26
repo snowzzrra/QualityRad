@@ -108,21 +108,22 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+     
         <div class="container body-content">
-            <div class="sidebar">
-                <a href="~/">Home</a>
-                <a href="~/Pages/CadastroClinica">Cadastro de Clinica</a>
-                <a href="~/Pages/Equipamento">Equipamento</a>
-                <a href="~/Pages/Terceirizados">Serviços Terceirizados</a>
-                <a href="~/Pages/DocumentosExternos">Documentos Externos</a>
-                <a href="~/Pages/Agenda">Minha Agenda</a>
-                <a href="~/Pages/PQR">Programa de Qualidade Radiológica</a>
-                <a href="~/Pages/PPR">Programa de Proteção Radiológica</a>
-                <a href="~/Pages/PGR">Programa de Gerenciamento de Risco</a>
-                <a href="~/Pages/POP">POPs Rotinas Operacionais</a>
-                <a href="~/Pages/NSP">Núcleo de Segurança do Paciente</a>
-                <a href="~/Pages/PGRSS">PGRSS</a>
+            <div class="sidebar" id="Sidebar" visible="false" runat="server">
+                <a runat="server" href="~/Default.aspx">Home</a>
+                <a runat="server" href="~/Pages/CadastroClinica.aspx">Cadastro de Clinica</a>
+                <a runat="server" href="~/Pages/Equipamento">Equipamento</a>
+                <a runat="server" href="~/Pages/Terceirizados">Serviços Terceirizados</a>
+                <a runat="server" href="~/Pages/DocumentosExternos">Documentos Externos</a>
+                <a runat="server" href="~/Pages/Agenda">Minha Agenda</a>
+                <a runat="server" href="~/Pages/PPQR">Programa de Qualidade Radiológica</a>
+                <a runat="server" href="~/Pages/PPR">Programa de Proteção Radiológica</a>
+                <a runat="server" href="~/Pages/PGR">Programa de Gerenciamento de Risco</a>
+                <a runat="server" href="~/Pages/POP">POPs Rotinas Operacionais</a>
+                <a runat="server" href="~/Pages/NSP">Núcleo de Segurança do Paciente</a>
+                <a runat="server" href="~/Pages/PGRSS">PGRSS</a>
+                <asp:LinkButton runat="server" OnClick="LogOff_Click" Font-Underline="true">Sair da conta.</asp:LinkButton>
             </div>
 
             <div class="main-content">

@@ -28,7 +28,15 @@ namespace QualityRad.Login
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!this.IsPostBack)
+            {
+                this.CarregaDados();
+            }
 
+            if (Application["LoginSession"] != null)
+            {
+                Response.Redirect("~/Default");
+            }
         }
 
         private void CarregaDados()
@@ -38,23 +46,28 @@ namespace QualityRad.Login
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            decimal ldcIdConta = this.ListaContas.OrderByDescending(a => a.acc_id).First().acc_id + 1;
-            string lsEmailConta = this.tbxEmail.Text;
-            string lsSenhaConta = this.tbxSenha.Text;
+            // SISTEMA DE LOGIN --- COMENTADO POR ESTAR NO MODO DESENVOLVIMENTO
+            //decimal ldcIdConta = this.ListaContas.OrderByDescending(a => a.acc_id).First().acc_id + 1;
+            //string lsEmailConta = this.tbxEmail.Text;
+            //string lsSenhaConta = this.tbxSenha.Text;
 
-            Account loConta = new Account(ldcIdConta, lsEmailConta, lsSenhaConta);
+            //Account conta = this.ioAccountDAO.ContaValida(lsEmailConta, lsSenhaConta);
 
-            if (this.ioAccountDAO.ContaValida(loConta))
-            {
-                Response.Redirect("~/Pages/CadastroClinica.aspx");
-            }
-            else
-            {
-                HttpContext.Current.Response.Write("<script>alert('Login inválido!');</script>");
-                this.CarregaDados();
-                this.tbxEmail.Text = String.Empty;
-                this.tbxSenha.Text = String.Empty;
-            }            
+            //if (conta == null)
+            //{
+            //    HttpContext.Current.Response.Write("<script>alert('Login inválido!');</script>");
+            //    this.CarregaDados();
+            //    this.tbxEmail.Text = String.Empty;
+            //    this.tbxSenha.Text = String.Empty;
+            //} else
+            //{
+            //    Application["LoginSession"] = conta;
+            //    Response.Redirect("~/Default");
+            //}
+
+            //DELETAR ESSE CÓDIGO APÓS FUNCIONAMENTO TOTAL:
+            Application["LoginSession"] = new Account(1, "1", "1", "1", "1");
+            Response.Redirect("~/Default");
         }
     }
 }

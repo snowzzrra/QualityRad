@@ -11,7 +11,23 @@ namespace QualityRad
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Application["LoginSession"] != null)
+            {
+                this.Sidebar.Visible = true;
+            }
+            else if (Context.Request.Path != "/Login/LoginPage" && Context.Request.Path != "/Login/Registro")
+            {
+                Response.Redirect("~/Login/LoginPage");
+            }
+        }
 
+        protected void LogOff_Click(object sender, EventArgs e)
+        {
+            if (Application["LoginSession"] != null)
+            {
+                Application["LoginSession"] = null;
+                Response.Redirect("~/Login/LoginPage");
+            }
         }
     }
 }
