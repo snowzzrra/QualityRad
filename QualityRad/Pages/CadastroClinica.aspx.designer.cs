@@ -175,5 +175,14 @@ namespace QualityRad.Pages
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submitButton;
+
+        /// <summary>
+        /// Controle gvGerenciamentoClinica.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvGerenciamentoClinica;
     }
 }

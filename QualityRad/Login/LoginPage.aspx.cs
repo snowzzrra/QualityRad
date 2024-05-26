@@ -33,7 +33,7 @@ namespace QualityRad.Login
                 this.CarregaDados();
             }
 
-            if (Application["LoginSession"] != null)
+            if (Session["LoginSession"] != null)
             {
                 Response.Redirect("~/Default");
             }
@@ -61,12 +61,12 @@ namespace QualityRad.Login
             //    this.tbxSenha.Text = String.Empty;
             //} else
             //{
-            //    Application["LoginSession"] = conta;
+            //    Session["LoginSession"] = conta;
             //    Response.Redirect("~/Default");
             //}
 
             //DELETAR ESSE CÓDIGO APÓS FUNCIONAMENTO TOTAL:
-            Application["LoginSession"] = new Account(1, "1", "1", "1", "1");
+            Session["LoginSession"] = new Account(3, "1", "1", "1", "1", 'U');
             Response.Redirect("~/Default");
         }
     }

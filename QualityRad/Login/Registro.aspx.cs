@@ -47,7 +47,7 @@ namespace QualityRad.Pages
             string phone = this.tbxPhone.Text;
             decimal ldcIdConta = this.ListaContas.OrderByDescending(a => a.acc_id).First().acc_id + 1;
 
-            Account newConta = new Account(ldcIdConta, email, password, phone, name);
+            Account newConta = new Account(ldcIdConta, email, password, phone, name, 'U');
 
             if (password == confirmPassword && !this.ListaContas.Any(a => a.acc_fone == phone) && !this.ListaContas.Any(a => a.acc_email == email))
             {

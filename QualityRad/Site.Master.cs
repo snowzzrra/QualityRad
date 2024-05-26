@@ -11,7 +11,7 @@ namespace QualityRad
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Application["LoginSession"] != null)
+            if (Session["LoginSession"] != null)
             {
                 this.Sidebar.Visible = true;
                 this.Footer.Visible = true;
@@ -24,9 +24,9 @@ namespace QualityRad
 
         protected void LogOff_Click(object sender, EventArgs e)
         {
-            if (Application["LoginSession"] != null)
+            if (Session["LoginSession"] != null)
             {
-                Application["LoginSession"] = null;
+                Session.Abandon();
                 Response.Redirect("~/Login/LoginPage");
             }
         }

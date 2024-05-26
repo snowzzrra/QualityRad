@@ -31,7 +31,7 @@ namespace QualityRad.Login.Models
                     {
                         while (loReader.Read())
                         {
-                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2), loReader.GetString(3), loReader.GetString(4));
+                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2), loReader.GetString(3), loReader.GetString(4), loReader.GetString(5)[0]);
                             loListContas.Add(loNovaConta);
                         }
                         loReader.Close();
@@ -57,7 +57,8 @@ namespace QualityRad.Login.Models
                 try
                 {
                     ioConexao.Open();
-                    ioQuery = new SqlCommand("INSERT INTO ACCOUNTS (email_user, pass_user, phone_user, name_user) VALUES (@email, @senha, @telefone, @nome)", ioConexao);
+                    ioQuery = new SqlCommand("INSERT INTO ACCOUNTS (id_user, email_user, pass_user, phone_user, name_user, acc_tipo) VALUES (@id, @email, @senha, @telefone, @nome, 'U')", ioConexao);
+                    ioQuery.Parameters.Add(new SqlParameter("@id", ioNovaConta.acc_id));
                     ioQuery.Parameters.Add(new SqlParameter("@email", ioNovaConta.acc_email));
                     ioQuery.Parameters.Add(new SqlParameter("@senha", ioNovaConta.acc_senha));
                     ioQuery.Parameters.Add(new SqlParameter("@telefone", ioNovaConta.acc_fone));
@@ -93,7 +94,7 @@ namespace QualityRad.Login.Models
                     {
                         while (loReader.Read())
                         {
-                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2), loReader.GetString(3), loReader.GetString(4));
+                            Account loNovaConta = new Account(loReader.GetInt32(0), loReader.GetString(1), loReader.GetString(2), loReader.GetString(3), loReader.GetString(4), loReader.GetString(5)[0]);
                             loListContas.Add(loNovaConta);
                         }
                         loReader.Close();

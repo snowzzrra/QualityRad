@@ -84,7 +84,7 @@
             right: 0;
             left: 18rem;
             bottom: 10px;
-            position: absolute;
+            position: relative;
         }
 
         .logout-button{
@@ -136,13 +136,14 @@
 
             <div class="main-content" style="padding: 0; height: 100%;">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                </asp:ContentPlaceHolder>
-                <div class="fim-pagina" runat="server" visible="false" id="Footer">
+                </asp:ContentPlaceHolder>   
+            </div>
+
+            <div class="fim-pagina" runat="server" visible="false" id="Footer">
                     <hr />
                     <footer class="footer">
                         <p>&copy; <%: DateTime.Now.Year %> - QualityRad</p>
                     </footer>
-                </div>
             </div>
         </div>
 

@@ -201,6 +201,10 @@
     </Compile>
     <Compile Include="Login\Models\Account.cs" />
     <Compile Include="Login\Models\AccountDAO.cs" />
+    <Compile Include="Models\Clinica.cs" />
+    <Compile Include="Models\ClinicaConta.cs" />
+    <Compile Include="Models\ClinicaContaDAO.cs" />
+    <Compile Include="Models\ClinicaDAO.cs" />
     <Compile Include="Pages\CadastroClinica.aspx.cs">
       <DependentUpon>CadastroClinica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
