@@ -10,39 +10,39 @@ namespace QualityRad.Login
 {
     public partial class LoginPage : System.Web.UI.Page
     {
-        AccountDAO ioAccountDAO = new AccountDAO();
+        //AccountDAO ioAccountDAO = new AccountDAO();
 
-        public List<Account> ListaContas
-        {
-            get
-            {
-                if ((List<Account>)ViewState["ViewStateListaContas"] == null)
-                    this.CarregaDados();
-                return (List<Account>)ViewState["ViewStateListaContas"];
-            }
-            set
-            {
-                ViewState["ViewStateListaContas"] = value;
-            }
-        }
+        //public List<Account> ListaContas
+        //{
+        //    get
+        //    {
+        //        if ((List<Account>)ViewState["ViewStateListaContas"] == null)
+        //            this.CarregaDados();
+        //        return (List<Account>)ViewState["ViewStateListaContas"];
+        //    }
+        //    set
+        //    {
+        //        ViewState["ViewStateListaContas"] = value;
+        //    }
+        //}
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!this.IsPostBack)
-            {
-                this.CarregaDados();
-            }
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    if (!this.IsPostBack)
+        //    {
+        //        this.CarregaDados();
+        //    }
 
-            if (Application["LoginSession"] != null)
-            {
-                Response.Redirect("~/Default");
-            }
-        }
+        //    if (Application["LoginSession"] != null)
+        //    {
+        //        Response.Redirect("~/Default");
+        //    }
+        //}
 
-        private void CarregaDados()
-        {
-            this.ListaContas = this.ioAccountDAO.BuscaContas();
-        }
+        //private void CarregaDados()
+        //{
+        //    this.ListaContas = this.ioAccountDAO.BuscaContas();
+        //}
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
