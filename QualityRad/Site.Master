@@ -125,7 +125,7 @@
                 <a runat="server" href="~/Pages/Terceirizados">Serviços Terceirizados</a>
                 <a runat="server" href="~/Pages/DocumentosExternos">Documentos Externos</a>
                 <a runat="server" href="~/Pages/Agenda">Minha Agenda</a>
-                <a runat="server" href="~/Pages/PPQR">Programa de Qualidade Radiológica</a>
+                <a runat="server" href="~/Pages/PQR">Programa de Qualidade Radiológica</a>
                 <a runat="server" href="~/Pages/PPR">Programa de Proteção Radiológica</a>
                 <a runat="server" href="~/Pages/PGR">Programa de Gerenciamento de Risco</a>
                 <a runat="server" href="~/Pages/POP">POPs Rotinas Operacionais</a>

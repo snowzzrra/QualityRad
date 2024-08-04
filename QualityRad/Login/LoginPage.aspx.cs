@@ -6,10 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using QualityRad.Login.Models;
 
-namespace QualityRad.Login
-{
-    public partial class LoginPage : System.Web.UI.Page
-    {
+namespace QualityRad.Login {
+    public partial class LoginPage : System.Web.UI.Page {
         //AccountDAO ioAccountDAO = new AccountDAO();
 
         //public List<Account> ListaContas
@@ -33,11 +31,10 @@ namespace QualityRad.Login
         //        this.CarregaDados();
         //    }
 
-            if (Session["LoginSession"] != null)
-            {
-                Response.Redirect("~/Default");
-            }
-        }
+        
+        //if (Session["LoginSession"] != null){
+        //    Response.Redirect("~/Default");
+        //}
 
         //private void CarregaDados()
         //{
@@ -68,6 +65,8 @@ namespace QualityRad.Login
             //DELETAR ESSE CÓDIGO APÓS FUNCIONAMENTO TOTAL:
             Session["LoginSession"] = new Account(3, "1", "1", "1", "1", 'U');
             Response.Redirect("~/Default");
+
+
         }
     }
 }
