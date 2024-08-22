@@ -30,7 +30,6 @@
         }
 
         .form-group {
-            margin-left: flew;
             margin-bottom: 15px;
         }
 
@@ -144,19 +143,19 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="logradouro">Logradouro:</label>
-                        <asp:TextBox ID="txtLogradouro" runat="server" CssClass="form-control" readonly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtLogradouro" runat="server" CssClass="form-control" ></asp:TextBox>
                     </div>
                     <div class="col-md-6">
                         <label for="bairro">Bairro:</label>
-                        <asp:TextBox ID="txtBairro" runat="server" CssClass="form-control" readonly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtBairro" runat="server" CssClass="form-control" ></asp:TextBox>
                     </div>
                     <div class="col-md-6">
                         <label for="cidade">Cidade:</label>
-                        <asp:TextBox ID="txtCidade" runat="server" CssClass="form-control" readonly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtCidade" runat="server" CssClass="form-control" ></asp:TextBox>
                     </div>
                     <div class="col-md-6">
                         <label for="estado">Estado:</label>
-                        <asp:TextBox ID="txtEstado" runat="server" CssClass="form-control" readonly="true"></asp:TextBox>
+                        <asp:TextBox ID="txtEstado" runat="server" CssClass="form-control" ></asp:TextBox>
                     </div>
                     <div class="col-md-6">
                         <label for="complemento">Complemento:</label>
@@ -205,7 +204,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="nomeProprietario">Nome do Proprietário:</label>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="txtNomeProprietario" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                     <div class="col-md-6">
                         <label for="fabricante">Fabricante:</label>
@@ -270,12 +269,6 @@
                         document.getElementById('<%= txtBairro.ClientID %>').value = conteudo.bairro;
                         document.getElementById('<%= txtCidade.ClientID %>').value = conteudo.localidade;
                         document.getElementById('<%= txtEstado.ClientID %>').value = conteudo.uf;
-
-                        // Desbloqueia os campos de endereço para edição
-                        document.getElementById('<%= txtLogradouro.ClientID %>').removeAttribute('readonly');
-                        document.getElementById('<%= txtBairro.ClientID %>').removeAttribute('readonly');
-                        document.getElementById('<%= txtCidade.ClientID %>').removeAttribute('readonly');
-                        document.getElementById('<%= txtEstado.ClientID %>').removeAttribute('readonly');
                     } else {
                         alert("CEP não encontrado.");
                     }
@@ -283,11 +276,12 @@
                 function logToConsole() {
                     console.log('Botão Enviar clicado');
                     // Adicione mais logs ou informações que deseja imprimir
-                    console.log('Razão Social:', document.getElementById('<%= txtRazaoSocial.ClientID %>').value);
-                    console.log('Nome Fantasia:', document.getElementById('<%= txtNomeFantasia.ClientID %>').value);
+                    console.log('Logradouro:', document.getElementById('<%= txtLogradouro.ClientID %>').value);
+                    console.log('Cidade:', document.getElementById('<%= txtCidade.ClientID %>').value);
                 }
             </script>
 
 
         
 </asp:Content>
+       
